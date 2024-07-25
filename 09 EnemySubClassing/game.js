@@ -56,11 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
       this.x -= this.vx * deltaTime;
       if (this.x < 0 - this.game.width) this.markedForDeletion = true;
       if (this.frameTimer > this.frameInterval) {
-        if ( this.frameX < this.maxFrame) this.frameX++
-        else this.frameX = 0
-        this.frameTimer = 0
-        }
-       else {
+        if (this.frameX < this.maxFrame) this.frameX++;
+        else this.frameX = 0;
+        this.frameTimer = 0;
+      } else {
         this.frameTimer += deltaTime;
       }
     }
@@ -135,9 +134,9 @@ document.addEventListener("DOMContentLoaded", function () {
       this.maxLength = Math.random() * this.game.height - this.spriteHeight;
     }
     update(deltaTime) {
-        if (this.y < 0 - this.spriteHeight * 2) {
-            this.markedForDeletion = true
-        }
+      if (this.y < 0 - this.spriteHeight * 2) {
+        this.markedForDeletion = true;
+      }
       super.update(deltaTime);
       this.y += this.vy * deltaTime;
       if (this.y > this.maxLength) this.vy += -0.8;
